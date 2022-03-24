@@ -1,1 +1,7 @@
 <h1>handlebars</h1>
+<h1>Seu nome é {{user.name}} e você tem {{user.age}} anos.</h1>
+{{#if auth}}
+<p>Parabéns, você está autenticado</p>
+{{else}}
+<p>Não passou</p>
+{{/if}}

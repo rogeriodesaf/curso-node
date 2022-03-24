@@ -6,7 +6,13 @@ app.engine('handlebars',exphbs.engine());
 app.set('view engine', 'handlebars');
 
 app.get('/', (req,res)=>{
-    res.render('home')
+    const user = {
+        name: 'rogério',
+        age: 30
+    }
+    const auth = false;
+    
+    res.render('home', {user:user , auth})
 })
 
 app.listen(3000,()=>{
