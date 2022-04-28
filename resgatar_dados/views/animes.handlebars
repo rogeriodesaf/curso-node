@@ -1,0 +1,9 @@
+<h1>Lista de animes</h1>
+<a href="/">Adicionar novo anime</a>
+{{#each animes}}
+<div class="animes-container">
+    #{{this.id}} - {{this.title}} - Número de episódios {{this.page}}
+</div>
+
+
+{{/each}}
