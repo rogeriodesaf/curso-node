@@ -22,7 +22,7 @@ conn.connect(function(err){
     if(err){
         console.log(err)
     }
-    app.listen(4000)
+    app.listen(5000)
     console.log('deu certo')
 })
 
