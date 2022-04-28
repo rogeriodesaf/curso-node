@@ -1,0 +1,7 @@
+<div>
+    {{anime.title}} ----- {{anime.page}} episódios.
+</div>
+<a href="/animes/edit/{{anime.id}}"><input type="submit" value="Editar"></a>
+<form action="/anime/remove/{{anime.id}}" method="POST">
+<input type="submit"  value="remover">
+</form>
