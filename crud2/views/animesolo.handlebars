@@ -1,0 +1,8 @@
+<div>
+   <span class="bold"><h1>{{anime.title}}</h1></span> 
+   <h1>Contém {{anime.episodios}} episódios</h1>.
+</div>
+<a href="/animeedit/{{anime.id}}"><input type="submit" value="editar" class="botton"></a>
+<form action="/animes/delete/{{anime.id}}" method="POST">
+<input type="submit" value="Deletar">
+</form>

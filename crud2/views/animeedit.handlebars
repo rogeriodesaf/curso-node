@@ -1,0 +1,15 @@
+<h1>Edite o anime</h1>
+<form action="/animes/editeanime" class="form" method="POST">
+<input type="hidden" name="id" value="{{animes.id}}">
+    <div class="form-control">
+        <label for="title">Digite o título do Anime</label>
+        <input type="text"  name="title" placeholder="Digite aqui o nome do anime" value="{{animes.title}}">
+     </div>   
+     <div class="form-control">
+        <label for="episodios">Digite a quantidade de episódios</label>
+        <input type="number" name="episodios" placeholder="Digite a quantidade de episódios" value="{{animes.episodios}}">
+    </div>
+    <input type="submit" value="Salvar" class="submit" >
+    
+
+</form>

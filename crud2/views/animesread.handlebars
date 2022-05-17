@@ -1,0 +1,12 @@
+<h1>Listagem de animes</h1>
+{{#each animes}}
+<div>
+    <ul>
+        <li>
+            # {{this.id}} - <span class="bold"><a href="/animesread/{{this.id}}">{{this.title}}</a></span> - {{this.episodios}} - episódios.
+        </li>
+    </ul>
+
+</div>
+
+{{/each}}
