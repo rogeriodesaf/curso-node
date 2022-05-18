@@ -1,0 +1,9 @@
+<h1>Lista de Séries</h1>
+{{#each series}}
+<ul>
+    <li>
+        #{{this.series}} 
+        <span class="bold"><a href="/individual/{{this.id}}">{{this.title}}</a></span> - {{this.episodios}} episódios.
+    </li>
+</ul>
+{{/each}}

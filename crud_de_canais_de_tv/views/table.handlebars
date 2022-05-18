@@ -1,0 +1,17 @@
+<h3>Lista de Canais Cadastrados</h3>
+
+<table id="customers">
+    <tr>
+        <th>Canal</th>
+        <th>Segmento</th>
+    </tr>
+     {{#each canais}}
+    <tr>
+       
+        <td><a  href="/single/{{this.id}}">{{this.nome}}</a> </td>
+        <td>{{this.segmento}}</td>
+        
+    </tr>
+    {{/each}}
+
+</table>

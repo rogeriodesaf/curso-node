@@ -1,5 +1,5 @@
 {
-  "name": "crud2",
+  "name": "crud_de_canais_de_tv",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,6 +14,8 @@
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
     "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }
-

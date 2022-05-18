@@ -1,0 +1,17 @@
+<h2>Atualizar Canais</h2>
+<div>
+    <form action="/canais/update" method="POST">
+    <input type="hidden" name="id" value="{{canais.id}}">
+        <label for="nome">Nome do Canal</label>
+        <input type="text" name="nome" id="nome_canal" placeholder="Digite o nome do canal" value="{{canais.nome}}">
+
+        <label for="">Segmento do Canal</label>
+        <input type="text" name="segmento" id="seg_canal" placeholder="Digite o segmento do canal" value="{{canais.segmento}}">
+
+      
+           <button   class=" button button2">Atualizar</button>
+    </form>
+      <form action="/canais/delete/{{canais.id}}" method="POST">
+             <button   class=" button button3">Deletar</button>
+        </form>
+</div>
