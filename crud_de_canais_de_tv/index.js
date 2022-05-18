@@ -29,8 +29,9 @@ app.post('/canais/select', (req, res) => {
     const nome = req.body.nome
     const segmento = req.body.segmento
 
-    const sql = `INSERT INTO canal (nome,segmento) VALUES ('${nome}','${segmento}')`
-    pool.query(sql, function (err) {
+    const sql = `INSERT INTO canal (??,??) VALUES (?,?)`
+    const data = ['nome','segmento',nome,segmento]
+    pool.query(sql, data,function (err) {
         if (err) {
             console.log(err)
         }
@@ -52,8 +53,9 @@ app.get('/table', (req, res) => {
 app.get('/single/:id', (req, res) => {
     const id = req.params.id
 
-    const sql = `SELECT * FROM canal WHERE id = ${id}`
-    pool.query(sql, function (err, data) {
+    const sql = `SELECT * FROM canal WHERE ?? = ?`
+    const data = ['id',id]
+    pool.query(sql,data, function (err, data) {
         if (err) {
             console.log(err)
             return
@@ -66,8 +68,9 @@ app.get('/single/:id', (req, res) => {
 app.get('/update/:id',(req,res)=>{
     const id = req.params.id
 
-    const sql = `SELECT * FROM canal WHERE id = ${id}`
-    pool.query(sql,function(err,data){
+    const sql = `SELECT * FROM canal WHERE ?? = ?`
+    const data = ['id',id]
+    pool.query(sql,data,function(err,data){
         if(err){
             console.log(err)
             return
@@ -82,8 +85,9 @@ app.post('/canais/update',(req,res)=>{
     const nome = req.body.nome
     const segmento = req.body.segmento
 
-    const sql = `UPDATE canal SET nome = '${nome}', segmento = '${segmento}' WHERE id = ${id}`
-    pool.query(sql,function(err){
+    const sql = `UPDATE canal SET ?? = ?, ?? = ? WHERE ?? = ?`
+    const data = ['nome',nome,'segmento',segmento,'id',id]
+    pool.query(sql, data,function(err){
         if(err){
             console.log(err)
             return
@@ -97,8 +101,9 @@ app.post('/canais/update',(req,res)=>{
 
 app.post('/canais/delete/:id',function(req,res){
     const id = req.params.id
-    const sql = `DELETE FROM canal WHERE id=${id}`
-    pool.query(sql,function(err){
+    const sql = `DELETE FROM canal WHERE ??=?`
+    const data = ['id',id]
+    pool.query(sql, data,function(err){
         if(err){
             console.log(err)
             return
