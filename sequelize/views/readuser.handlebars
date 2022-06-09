@@ -1,0 +1,63 @@
+<h1>Edição de usuário</h1>
+
+
+<div>
+    <form action="/users/editar" method="POST">
+        <input type="hidden" name="id" value="{{users.id}}">
+        <label for="nome">Nome do Usuário</label>
+        <input type="text" name="name" id="nome_canal" placeholder="Digite o nome do usuário" value="{{users.name}}">
+
+        <label for="">Digite a sua profissão</label>
+        <input type="text" name="ocuppation" id="seg_canal" placeholder="Digite sua profissão"
+            value="{{users.ocuppation}}">
+
+        <input type="checkbox" name="newsletter" checked>
+        <label for="newsletter">Deseja receber nossa newsletter?</label>
+        <input type="submit" value="Editar">
+
+    </form>
+</div>
+<div>
+    <h2>Digite o endereço</h2>
+    <form action="/adress/create" method="POST">
+        <input type="hidden" name="UserId" value="{{users.id}}">
+        <label for="street">Rua:</label>
+        <input type="text" name="street" placeholder="Digite o nome da rua">
+
+        <label for="number">Número</label>
+        <input type="number" name="number" placeholder="Digite o número">
+
+        <label for="number">Cidade</label>
+        <input type="text" name="city" placeholder="Sua cidade">
+
+        <input type="submit" value="Inserir endereço">
+    </form>
+</div>
+<div>
+    <h2>Lista de Endereços</h2>
+    <table id="customers">
+    <tr>
+        <th>Nome da Rua</th>
+        <th>Número</th>
+        <th>Cidade</th>
+        <th>Excluir endereço</th>
+    </tr>
+    {{#each users.Adresses}}
+    
+
+        <tr>
+            <td>{{this.street}}</td>
+            <td>{{this.number}}</td>
+            <td>{{this.city}}</td>
+            <td><form action="/adress/delete/{{this.id}}" method="POST">
+            <input type="submit" value="Excluir" class="delete-btn"></td>
+         </form>
+        </tr>
+        {{/each}}
+    </table>
+
+
+
+    
+
+</div>
