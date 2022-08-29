@@ -19,3 +19,5 @@ const Task = db.define('Task',{
         },
 
     })
+    
+module.exports = Task
